@@ -1,73 +1,73 @@
+
 @include('components.header')
 
-        @include('components.sidebar')
+@include('components.topbar')
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+@include('components.sidebar')
 
-            <!-- Main Content -->
-            <div id="content">
+<?php $villes = ["","Adrar","Chlef","Laghouat","Oum El Bouaghi","Batna","Béjaïa","Biskra","Béchar",
+    "Blida","Bouira","Tamanrasset","Tébessa","Tlemcen","Tiaret","Tizi Ouzou","Alger","Djelfa","Jijel",
+    "Sétif","Saïda","Skikda","Sidi Bel Abbès","Annaba","Guelma","Constantine","Médéa","Mostaganem","M'Sila",
+    "Mascara","Ouargla","Oran","El Bayadh","Illizi","Bordj Bou Arreridj","Boumerdès","El Tarf","Tindouf","Tissemsilt",
+    "El Oued","Khenchela","Souk Ahras","Tipaza","Mila","Aïn Defla","Naâma","Aïn Témouchent","Ghardaïa","Relizane","Timimoun",
+    "Bordj Badji Mokhtar","Ouled Djellal","Béni Abbès","In Salah","In Guezzam","Touggourt","Djanet","El Meghaier","El Menia"]; ?>
 
-            @include('components.topbar')
+ <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid" dir="rtl" style="text-align : right">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">المشاريع</h1>
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">برنامج مشاريع الصفقات العمومية 2024 للدراسات</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th style="width : 20%">اسم المشروع</th>
-                                            <th>الاجراء</th>
-                                            <th>تاريخ تسجيل العملية او التبيغ</th>
-                                            <th>تاريخ ايداع دفتر الشروط</th>
-                                            <th>رقم تأشيرة دفتر الشروط</th>
-                                            <th>تاريخ تأشيرة دفتر الشروط</th>
-                                            <th>تاريخ الاعلان عن المسابقة </th>
-                                            <th>مدة تحضير ملف الترشح</th>
-                                            <th>تاريخ محضر تاهيل الترشح</th>
-                                            <th>تاريخ اعلان الانتقاء الاولي</th>
-                                            <th>مدة تحضير عروض الخدمات + التقني +المالي</th>
-                                            <th>تاريخ فتح العرض التقني</th>
-                                            <th>رقم محضر التحليل التقني</th>
-                                            <th>تاريخ محضر التحليل التقني</th>
-                                            <th>تاريخ  عروض الخدمات (لجنة التحكيم)</th>
-                                            <th>رقم المحضر النهائي</th>
-                                            <th>تاريخ المحضر النهائي</th>
-                                            <th>رقم رسالة تكملة الوثائق التبريرية</th>
-                                            <th>تاريخ رسالة تكملة الوثائق التبريرية</th>
-                                            <th>تاريخ اعلان المنح المؤقت</th>
-
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        
-                                        <tr>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                <div class="row">     
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">&emsp;Clients</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered verticle-middle table-responsive-sm" style="color : black">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Entreprise</th>
+                                                <th scope="col">Nom et Prenom</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Telephone</th>
+                                                <th scope="col">Wilaya</th>
+                                                <th scope="col" style='text-align : center'>Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($clients as $client)
+                                            <tr>
+                                                <td>{{$client->entreprise}}</td>
+                                                <td>{{$client->nom}} {{$client->prenom}}</td>
+                                                <td>{{$client->email}}</td>
+                                                <td>{{$client->phone}}</td>
+                                                <td>{{$villes[$client->wilaya]}} ({{$client->wilaya}})</td>
+                                                <td style='text-align : center'>
+                                                    <span>
+                                                        <a href="/detail/{{$client->id}}" data-toggle="tooltip"
+                                                            data-placement="top" title="documents"><i
+                                                                class="fa fa-eye color-danger"></i>
+                                                        </a>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
-            <!-- End of Main Content -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
 
-            @include('components.footer')
-<script type="text/javascript">
-window.onload = function(){
-	document.getElementById('loading').style.display = "none";
-};
-</script>
+
+@include('components.footer')

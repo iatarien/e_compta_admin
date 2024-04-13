@@ -1,47 +1,63 @@
-<div id="loading" class="loading-overlay">
-    <img src="/assets/img/loading.gif" alt="LOGO">
-    
-  </div>
-
-
-              <!-- Footer -->
-              <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; {{ Date('Y') }} Univ Tamenrasset</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
+                <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p> 
+            </div>
         </div>
-        <!-- End of Content Wrapper -->
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="/vendor/global/global.min.js"></script>
+    <script src="/js/quixnav-init.js"></script>
+    <script src="/js/custom.min.js"></script>
 
 
+    <!-- Vectormap -->
+    <script src="/vendor/raphael/raphael.min.js"></script>
+    <script src="/vendor/morris/morris.min.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/vendor/chart.js/Chart.bundle.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
+    <script src="/vendor/gaugeJS/dist/gauge.min.js"></script>
 
-    <script type="text/javascript">
-    window.onload = function(){
-        document.getElementById('loading').style.display = "none";
-    };
-    </script>
+    <!--  flot-chart js -->
+    <script src="/vendor/flot/jquery.flot.js"></script>
+    <script src="/vendor/flot/jquery.flot.resize.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="/vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+
+
+    <script src="/js/dashboard/dashboard-1.js"></script>
 
 </body>
 

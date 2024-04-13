@@ -18,9 +18,9 @@ class Controller extends BaseController
     public function __construct() 
     {
         // Fetch the Site Settings object
-        $bloc = DB::table('bloc')->first();
-        $this->bloc = $bloc->bloc_name;
-        View::share('bloc', $this->bloc);
+        // $bloc = DB::table('bloc')->first();
+        // $this->bloc = $bloc->bloc_name;
+        // View::share('bloc', $this->bloc);
 
     }
 }
