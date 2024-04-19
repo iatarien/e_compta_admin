@@ -6,7 +6,7 @@
 @include('components.sidebar')
 
 <?php 
-    $link ="http://localhost:8089";
+    $link ="https://ecompta.sis-chocolate.com/";
     $villes = ["","Adrar","Chlef","Laghouat","Oum El Bouaghi","Batna","Béjaïa","Biskra","Béchar",
     "Blida","Bouira","Tamanrasset","Tébessa","Tlemcen","Tiaret","Tizi Ouzou","Alger","Djelfa","Jijel",
     "Sétif","Saïda","Skikda","Sidi Bel Abbès","Annaba","Guelma","Constantine","Médéa","Mostaganem","M'Sila",
