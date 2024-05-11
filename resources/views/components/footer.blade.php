@@ -3,8 +3,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-                <p>Distributed by <a href="https://themewagon.com/" target="_blank">Themewagon</a></p> 
+
             </div>
         </div>
         <!--**********************************
@@ -34,19 +33,6 @@
     <script src="/js/custom.min.js"></script>
 
 
-    <!-- Vectormap -->
-    <script src="/vendor/raphael/raphael.min.js"></script>
-    <script src="/vendor/morris/morris.min.js"></script>
-
-
-    <script src="/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="/vendor/chart.js/Chart.bundle.min.js"></script>
-
-    <script src="/vendor/gaugeJS/dist/gauge.min.js"></script>
-
-    <!--  flot-chart js -->
-    <script src="/vendor/flot/jquery.flot.js"></script>
-    <script src="/vendor/flot/jquery.flot.resize.js"></script>
 
     <!-- Owl Carousel -->
     <script src="/vendor/owl-carousel/js/owl.carousel.min.js"></script>
@@ -57,7 +43,7 @@
     <script src="/vendor/jquery.counterup/jquery.counterup.min.js"></script>
 
 
-    <script src="/js/dashboard/dashboard-1.js"></script>
+
 
 </body>
 

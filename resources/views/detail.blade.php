@@ -6,7 +6,7 @@
 @include('components.sidebar')
 
 <?php 
-    $link ="https://ecompta.sis-chocolate.com/";
+
     $villes = ["","Adrar","Chlef","Laghouat","Oum El Bouaghi","Batna","Béjaïa","Biskra","Béchar",
     "Blida","Bouira","Tamanrasset","Tébessa","Tlemcen","Tiaret","Tizi Ouzou","Alger","Djelfa","Jijel",
     "Sétif","Saïda","Skikda","Sidi Bel Abbès","Annaba","Guelma","Constantine","Médéa","Mostaganem","M'Sila",
@@ -104,77 +104,7 @@
                                         <input readonly type="text" value="{{$client->RC}}" name="RC" id="RC" class="form-control" placeholder="N° Registre de Commerce" readonly>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <?php $disabled = ""; $transparent = "color : transparent";
-                                        if($docs->facture_achat == NULL || $docs->facture_achat == ""){
-                                            $disabled = "pointer-events : none; background-color : lightgray;";
-                                            $transparent = "";
-                                        } ?>
-                                    <label for="inputText" class="col-sm-2 col-form-label">Facture Achat</label>
 
-                                    <div class="col-sm-1">
-                                        
-                                        <a class="btn btn-info"  target="_blank" style="{{$disabled}}" href="{{$link.$docs->facture_achat}}">Visualiser </a>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="id_doc" value="{{$link.$docs->id_doc}}" />
-                                <div class="row mb-3">
-                                    <?php $disabled = ""; $transparent = "color : transparent";
-                                        if($docs->facture_vente == NULL || $docs->facture_vente == ""){
-                                            $disabled = "pointer-events : none; background-color : lightgray;";
-                                            $transparent = "";
-                                        } ?>
-                                    <label for="inputNumber" class="col-sm-2 col-form-label">Facture Vente</label>
-                                    <div class="col-sm-1">
-                                        <a class="btn btn-info"  target="_blank" style="{{$disabled}}" href="{{$link.$docs->facture_vente}}">Visualiser </a>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <?php $disabled = ""; $transparent = "color : transparent";
-                                        if($docs->releve == NULL || $docs->releve == ""){
-                                            $disabled = "pointer-events : none; background-color : lightgray;";
-                                            $transparent = "";
-                                        } ?>
-                                    <label for="inputNumber" class="col-sm-2 col-form-label">Relevé Compte Bancaire</label>
-                                    <div class="col-sm-1">
-                                        <a class="btn btn-info"  target="_blank" style="{{$disabled}}" href="{{$link.$docs->releve}}">Visualiser </a>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <?php $disabled = ""; $transparent = "color : transparent";
-                                        if($docs->registre == NULL || $docs->registre == ""){
-                                            $disabled = "pointer-events : none; background-color : lightgray;";
-                                            $transparent = "";
-                                        } ?>
-                                    <label for="inputNumber" class="col-sm-2 col-form-label">Registre de Commerce</label>
-
-                                    <div class="col-sm-1">
-                                        <a class="btn btn-info"  target="_blank" style="{{$disabled}}" href="{{$link.$docs->registre}}">Visualiser </a>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <?php $disabled = ""; $transparent = "color : transparent";
-                                        if($docs->existence == NULL || $docs->existence == ""){
-                                            $disabled = "pointer-events : none; background-color : lightgray;";
-                                            $transparent = "";
-                                        } ?>
-                                    <label for="inputNumber" class="col-sm-2 col-form-label">Déclaration d'existence </label>
-                                    <div class="col-sm-1">
-                                        <a class="btn btn-info"  target="_blank" style="{{$disabled}}" href="{{$link.$docs->existence}}">Visualiser </a>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <?php $disabled = ""; $transparent = "color : transparent";
-                                        if($docs->agrement == NULL || $docs->agrement == ""){
-                                            $disabled = "pointer-events : none; background-color : lightgray;";
-                                            $transparent = "";
-                                        } ?>
-                                    <label for="inputNumber" class="col-sm-2 col-form-label">Carte Agricole ou agrement</label>
-
-                                    <div class="col-sm-1">
-                                        <a class="btn btn-info"  target="_blank" style="{{$disabled}}" href="{{$link.$docs->agrement}}">Visualiser </a>
-                                    </div>
-                                </div>
                             </form><!-- End General Form Elements -->
 
                             </div>

@@ -17,10 +17,16 @@ class Controller extends BaseController
     
     public function __construct() 
     {
-        // Fetch the Site Settings object
-        // $bloc = DB::table('bloc')->first();
-        // $this->bloc = $bloc->bloc_name;
-        // View::share('bloc', $this->bloc);
+
+        $link ="https://ecompta.sis-chocolate.com";
+        $link ="http://localhost:8089";
+        $link1 ="https://admin.sis-chocolate.com";
+        $link1 ="http://localhost:8000";
+        $this->link = $link;
+        $this->link1 = $link1;
+        View::share('link', $this->link);
+        View::share('link1', $this->link1);
+
 
     }
 }

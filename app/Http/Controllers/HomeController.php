@@ -39,9 +39,40 @@ class HomeController extends Controller
     public function detail($id){
         $user = Auth::user();
         $client = DB::table('users')->where("id",$id)->first();
-        $docs = DB::table('documents')->where('id_user',$id)->first();
-        return view('detail',['user'=>$user,"client"=>$client,"docs"=>$docs]);
+        return view('detail',['user'=>$user,"client"=>$client]);
     }
+    public function traiter_demande($id){
+        $user = Auth::user();
+        $demande = DB::table('demandes')->where('id_demande',$id)->first();
+        $client = DB::table('users')->where("id",$demande->id_user)->first();
+        return view('traiter_demande',['user'=>$user,"client"=>$client,"demande"=>$demande]);
+    }
+    public function demandes($type){
+        $user = Auth::user();
+        if($type ==="not"){
+            $demandes = DB::table('demandes')->join('users','users.id',"=","demandes.id_user")->whereNull('state')->get();
+        }else{
+            $demandes = DB::table('demandes')->join('users','users.id',"=","demandes.id_user")->where('state',$type)->get();
+        }
+       
+        return view('demandes',['user'=>$user,"demandes"=>$demandes,"type"=>$type]);
+    }
+
+    public function save_traitement(Request $request){
+        $id = $request['id'];
+        $montant = $request['montant'];
+        $file = $request['doc'];
+        $destination0 = public_path().'\files';
+        $destination1 = public_path().'/files';
+        $destination = $this->link1.'/files/';
+        $name= $destination.$id.$file->getClientOriginalName();
+        $file->move($destination0,$name);
+
+        $state = "treated";
+        DB::table('demandes')->where('id_demande', $id)->update(['montant'=>$montant,'state'=>$state,"file"=>$name]);
+        return redirect("/demandes/not");
+    }
+
 
     
 }

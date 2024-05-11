@@ -5,25 +5,19 @@
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label first"></li>
-                    <li><a class="has-arrow" href="/" aria-expanded="false"><i
-                                class="icon icon-single-04"></i><span class="nav-text">Tableau de bord</span></a>
+                    <li><a href="/clients" aria-expanded="false"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Clients</span></a>
 
                     </li>
-                    <!-- <li class="nav-label">Apps</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-app-store"></i><span class="nav-text">Apps</span></a>
+                                class="icon icon-single-copy-06"></i><span class="nav-text">Demandes</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="/app-profile.html">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="/email-compose.html">Compose</a></li>
-                                    <li><a href="/email-inbox.html">Inbox</a></li>
-                                    <li><a href="/email-read.html">Read</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/app-calender.html">Calendar</a></li>
+                            <li><a href="/demandes/not">Demandes non traités</a></li>
+                            <li><a href="/demandes/treated">Demandes traités</a></li>
+                            <li><a href="/demandes/paid">Demandes payés</a></li>
                         </ul>
-                    </li>
+                    </li> 
+                    <!--  
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-chart-bar-33"></i><span class="nav-text">Charts</span></a>
                         <ul aria-expanded="false">

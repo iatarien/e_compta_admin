@@ -16,8 +16,13 @@ Route::get('/home', 'HomeController@index');
 Route::get('/detail/{id}', 'HomeController@detail');
 
 /** OPERATIONS ROUTES */
+Route::get('/clients', 'HomeController@index');
 Route::get('/', 'HomeController@index');
 
+Route::get('/demandes/{type}', 'HomeController@demandes');
+Route::get('/traiter_demande/{id}', 'HomeController@traiter_demande');
+
+Route::post('/save_traitement/', 'HomeController@save_traitement');
 
 
 /** AUTH ROUTES **/
