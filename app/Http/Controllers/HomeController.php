@@ -28,7 +28,6 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-
    
     public function index(){
         $user = Auth::user();
@@ -59,7 +58,9 @@ class HomeController extends Controller
     }
 
     public function save_traitement(Request $request){
+        $user = Auth::user();
         $id = $request['id'];
+        $client = $request['client'];
         $montant = $request['montant'];
         $file = $request['doc'];
         $destination0 = public_path().'\files';
@@ -68,11 +69,36 @@ class HomeController extends Controller
         $name= $destination.$id.$file->getClientOriginalName();
         $file->move($destination0,$name);
 
+        $txt = "Votre demande a été traité";
+
+        $id_message = DB::table('messages')->insertGetId(['message_from'=>$user->id,"message_to"=>$client,
+        'message_text'=>$txt,"demande_type"=>"not","date"=>Date('Y-m-d')]);
         $state = "treated";
         DB::table('demandes')->where('id_demande', $id)->update(['montant'=>$montant,'state'=>$state,"file"=>$name]);
         return redirect("/demandes/not");
     }
 
+    public function get_messages(){
+        $user = Auth::user();
+        $messages = DB::table('messages')->join("users","users.id","messages.message_from")->
+        where('message_to',$user->id)->orderBy('id_message',"DESC")->limit(5)->get();
+        return $messages;
+    }
+    public function new_messages(){
+        $user = Auth::user();
+        $messages = DB::table('messages')->where('message_to',$user->id)->whereNull("seen")->count();
+        return $messages;
+    }
+    public function view_message($id,$type){
+        $user = Auth::user();
 
+        DB::table('messages')->where('id_message',$id)->update(["seen"=>1]);
+        if($type =="not" || $type =="paid"){
+            return Redirect::to("demandes/".$type);
+        }else{
+            return Redirect::to("detail/".$type);
+        }
+        
+    }
     
 }

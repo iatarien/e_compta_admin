@@ -198,6 +198,7 @@
                                     </div>
                                     @endif
                                     <input type="hidden" name="id" value="{{$demande->id_demande}}" ?>
+                                    <input type="hidden" name="client" value="{{$client->id}}" ?>
                                     @if($demande->state ==NULL)
                                     <div align="center">
                                         <button type="submit" class="btn btn-primary">Sauvegarder </button>

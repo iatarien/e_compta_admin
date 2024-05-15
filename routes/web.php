@@ -31,6 +31,11 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::get('/logout', 'Auth\LoginController@logout');
 
 
+/** MESSAGES ROUTES */
+
+Route::get('/get_msgs', 'HomeController@get_messages');
+Route::get('/new_msgs/','HomeController@new_messages');
+Route::get('/view_msg/{id}/{type}','HomeController@view_message');
 Auth::routes();
 
 
