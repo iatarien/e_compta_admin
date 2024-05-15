@@ -87,7 +87,7 @@ table tr  {
                                     <td><span class="fw-bold">Demande Déclaration {{$val1}}</span></td>
                                     <td><span class="fw-bold">{{$demande->date}}</span></td>
                                     @if($demande->state == "paid")
-                                    <?php $state = "Demande traité et payé"; $btn ="Verifier"; $clss ="btn-info"; $link= "/demande/".$demande->id_demande; $target ="";?>
+                                    <?php $state = "Demande traité et payé"; $btn ="Verifier"; $clss ="btn-info"; $link= "/traiter_demande/".$demande->id_demande; $target ="";?>
                                     @elseif($demande->state == "treated")
                                     <?php $state = "Demande traité"; $btn ="Verifier"; $clss ="btn-info"; $link="/traiter_demande/".$demande->id_demande; $target ="";?>
                                     @else
