@@ -58,7 +58,7 @@
                                     <label for="inputText" class="col-sm-2 col-form-label">Wilaya</label>
                                     <div class="col-sm-10">
                                         <select readonly class="form-control" name="wilaya">
-                                        <option selected style="visibility : hidden" value="{{$client->wilaya}}" > {{$villes[$client->wilaya]}} ({{$client->wilaya}})</option>
+                                        <option selected style="visibility : hidden" value="{{$client->wilaya}}" > {{$villes[intval($client->wilaya)]}} ({{$client->wilaya}})</option>
                                             
                                         </select >
                                     </div>
