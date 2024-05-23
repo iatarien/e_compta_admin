@@ -44,7 +44,7 @@
                                                 <td>{{$client->nom}} {{$client->prenom}}</td>
                                                 <td>{{$client->email}}</td>
                                                 <td>{{$client->phone}}</td>
-                                                <td>{{$villes[$client->wilaya]}} ({{$client->wilaya}})</td>
+                                                <td>{{$villes[intval($client->wilaya)]}} ({{$client->wilaya}})</td>
                                                 <td style='text-align : center'>
                                                     <span>
                                                         <a href="/detail/{{$client->id}}" data-toggle="tooltip"
